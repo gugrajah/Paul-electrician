@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Comparison | Black & White Electrical</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .theme-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .theme-card:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased p-4 md:p-8">
+
+  <!-- HEADER -->
+  <div class="max-w-7xl mx-auto mb-8 text-center">
+    <div class="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 px-3.5 py-1 rounded-full text-xs font-semibold text-amber-400 mb-3">
+      <span>Theme Workshop</span> • <span>Black & White Electrical</span>
+    </div>
+    <h1 class="text-2xl md:text-4xl font-black text-white tracking-tight mb-2">Live Side-by-Side Theme Comparison</h1>
+    <p class="text-sm md:text-base text-slate-400 max-w-2xl mx-auto">
+      Compare how different visual palettes and typography treatments express Paul Badenhorst's trade identity across Greater Pretoria.
+    </p>
+
+    <!-- VIEW TOGGLE BAR -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
+      <button id="btn-grid" onclick="switchView('grid')" class="px-4 py-2 rounded-lg text-xs md:text-sm font-bold bg-amber-500 text-black shadow">
+        Side-by-Side Grid (All 4)
+      </button>
+      <button id="btn-full-1" onclick="switchView('t1')" class="px-3 py-2 rounded-lg text-xs md:text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300">
+        1. Current Safety Amber
+      </button>
+      <button id="btn-full-2" onclick="switchView('t2')" class="px-3 py-2 rounded-lg text-xs md:text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300">
+        2. High-Voltage Blueprint
+      </button>
+      <button id="btn-full-3" onclick="switchView('t3')" class="px-3 py-2 rounded-lg text-xs md:text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300">
+        3. Monochromatic Swiss
+      </button>
+      <button id="btn-full-4" onclick="switchView('t4')" class="px-3 py-2 rounded-lg text-xs md:text-sm font-medium bg-slate-800 hover:bg-slate-700 text-slate-300">
+        4. Pretoria Stalwart
+      </button>
+    </div>
+  </div>
+
+  <!-- COMPARISON CONTAINER -->
+  <div id="container-grid" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <!-- THEME 1: CURRENT SAFETY AMBER -->
+    <div class="theme-card bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+      <div>
+        <div class="p-4 bg-slate-900 border-b border-slate-800">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Theme 1 (Current)</span>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded font-mono">Verified Active</span>
+          </div>
+          <h2 class="text-lg font-bold text-white">Industrial Safety Trade</h2>
+          <p class="text-xs text-slate-400 mt-1">Rugged high-contrast caution amber with slate foundations. Direct, honest, utilitarian.</p>
+          
+          <!-- Swatches -->
+          <div class="flex items-center gap-1.5 mt-3">
+            <div class="w-6 h-6 rounded bg-[#f59e0b] border border-white/20" title="Amber-500 (#f59e0b)"></div>
+            <div class="w-6 h-6 rounded bg-[#0f172a] border border-white/20" title="Navy-Charcoal (#0f172a)"></div>
+            <div class="w-6 h-6 rounded bg-[#047857] border border-white/20" title="Emerald-700 (#047857)"></div>
+            <div class="w-6 h-6 rounded bg-[#f8fafc] border border-white/20" title="Surface Light (#f8fafc)"></div>
+          </div>
+        </div>
+
+        <!-- MOCK PREVIEW -->
+        <div class="p-4 bg-[#f8fafc] text-slate-900 text-left">
+          <!-- Top Bar -->
+          <div class="bg-slate-950 text-white text-[11px] p-2 rounded-lg flex items-center justify-between mb-3 font-semibold">
+            <span>⚡ Pretoria North Base</span>
+            <span class="text-amber-400">071 213 8108</span>
+          </div>
+
+          <!-- Hero Mock -->
+          <div class="bg-slate-900 text-white p-4 rounded-xl mb-3 border border-slate-800">
+            <span class="text-[10px] text-amber-300 uppercase tracking-widest font-bold block mb-1">Black & White Electrical</span>
+            <h3 class="text-base font-black leading-tight text-white mb-2">
+              Work in Black & White: <span class="text-amber-400">Honest & Clear</span>
+            </h3>
+            <p class="text-[11px] text-slate-300 mb-3">Residential fault finding & statutory Certificates of Compliance (CoC).</p>
+            <div class="flex gap-2">
+              <button class="flex-1 bg-amber-500 text-black font-black text-xs py-2 rounded-lg shadow">Call Paul</button>
+              <button class="flex-1 bg-emerald-700 text-white font-bold text-xs py-2 rounded-lg shadow">WhatsApp</button>
+            </div>
+          </div>
+
+          <!-- Component Mock: Problem Card -->
+          <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm mb-3">
+            <span class="text-[10px] font-bold text-amber-900 bg-amber-100 px-2 py-0.5 rounded uppercase">Urgent Fault</span>
+            <h4 class="text-xs font-bold text-slate-900 mt-1">Power Keeps Tripping</h4>
+            <p class="text-[11px] text-slate-600 mt-0.5">Unplug heavy appliances first. If it still trips, call Paul.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-slate-900 border-t border-slate-800 text-center">
+        <span class="text-xs text-amber-400 font-bold">Currently Implemented in index.html</span>
+      </div>
+    </div>
+
+    <!-- THEME 2: HIGH-VOLTAGE BLUEPRINT -->
+    <div class="theme-card bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+      <div>
+        <div class="p-4 bg-slate-900 border-b border-slate-800">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Theme 2</span>
+            <span class="text-[10px] bg-cyan-950 text-cyan-300 border border-cyan-800 px-2 py-0.5 rounded font-mono">Technical</span>
+          </div>
+          <h2 class="text-lg font-bold text-white">High-Voltage Blueprint</h2>
+          <p class="text-xs text-slate-400 mt-1">Engineering schematics, drafting navy, burnished copper busbars, and cobalt accents.</p>
+          
+          <!-- Swatches -->
+          <div class="flex items-center gap-1.5 mt-3">
+            <div class="w-6 h-6 rounded bg-[#0a192f] border border-white/20" title="Blueprint Navy (#0a192f)"></div>
+            <div class="w-6 h-6 rounded bg-[#c2410c] border border-white/20" title="Burnished Copper (#c2410c)"></div>
+            <div class="w-6 h-6 rounded bg-[#0284c7] border border-white/20" title="Cobalt Accent (#0284c7)"></div>
+            <div class="w-6 h-6 rounded bg-[#f1f5f9] border border-white/20" title="Drafting Gray (#f1f5f9)"></div>
+          </div>
+        </div>
+
+        <!-- MOCK PREVIEW -->
+        <div class="p-4 bg-[#f1f5f9] text-slate-900 text-left">
+          <!-- Top Bar -->
+          <div class="bg-[#0a192f] text-white text-[11px] p-2 rounded-md flex items-center justify-between mb-3 font-mono font-semibold border-b-2 border-cyan-500">
+            <span>SANS 10142-1 SPEC</span>
+            <span class="text-cyan-400">071 213 8108</span>
+          </div>
+
+          <!-- Hero Mock -->
+          <div class="bg-[#0a192f] text-white p-4 rounded-lg mb-3 border border-cyan-900 relative">
+            <span class="text-[10px] text-cyan-400 font-mono tracking-widest block mb-1">CONTRACTOR #DOL-PRETORIA</span>
+            <h3 class="text-base font-black leading-tight text-white mb-2">
+              Certified Electrical: <span class="text-orange-500">Zero Fault Tolerance</span>
+            </h3>
+            <p class="text-[11px] text-slate-300 mb-3">Statutory CoC testing, thermographic verification, and deed transfer compliance.</p>
+            <div class="flex gap-2">
+              <button class="flex-1 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs py-2 rounded shadow">Book Inspection</button>
+              <button class="flex-1 bg-cyan-700 hover:bg-cyan-600 text-white font-bold text-xs py-2 rounded shadow">WhatsApp Tech</button>
+            </div>
+          </div>
+
+          <!-- Component Mock -->
+          <div class="bg-white p-3 rounded-lg border-l-4 border-cyan-600 shadow-sm mb-3">
+            <span class="text-[10px] font-mono font-bold text-cyan-900 bg-cyan-50 px-2 py-0.5 rounded">OHS REGULATION #7</span>
+            <h4 class="text-xs font-bold text-slate-900 mt-1">Pre-Transfer Compliance Check</h4>
+            <p class="text-[11px] text-slate-600 mt-0.5">Strict SANS 10142-1 verification for bond registration.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-slate-900 border-t border-slate-800 text-center">
+        <span class="text-xs text-cyan-400 font-semibold">Blueprint Direction</span>
+      </div>
+    </div>
+
+    <!-- THEME 3: STRICT MONOCHROMATIC SWISS -->
+    <div class="theme-card bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+      <div>
+        <div class="p-4 bg-slate-900 border-b border-slate-800">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Theme 3</span>
+            <span class="text-[10px] bg-yellow-950 text-yellow-300 border border-yellow-800 px-2 py-0.5 rounded font-mono">Ultra-Bold</span>
+          </div>
+          <h2 class="text-lg font-bold text-white">Monochromatic Swiss</h2>
+          <p class="text-xs text-slate-400 mt-1">Literal Black & White. Stark typography, heavy 2px borders, acid signal yellow lockout tag.</p>
+          
+          <!-- Swatches -->
+          <div class="flex items-center gap-1.5 mt-3">
+            <div class="w-6 h-6 rounded bg-[#000000] border border-white/20" title="Pure Black (#000000)"></div>
+            <div class="w-6 h-6 rounded bg-[#ffffff] border border-white/20" title="Pure White (#ffffff)"></div>
+            <div class="w-6 h-6 rounded bg-[#facc15] border border-white/20" title="Signal Yellow (#facc15)"></div>
+            <div class="w-6 h-6 rounded bg-[#475569] border border-white/20" title="Neutral Steel (#475569)"></div>
+          </div>
+        </div>
+
+        <!-- MOCK PREVIEW -->
+        <div class="p-4 bg-white text-black text-left">
+          <!-- Top Bar -->
+          <div class="bg-black text-white text-[11px] p-2 rounded-none flex items-center justify-between mb-3 font-black uppercase tracking-wider">
+            <span>B&W ELECTRICAL</span>
+            <span class="text-yellow-400">071 213 8108</span>
+          </div>
+
+          <!-- Hero Mock -->
+          <div class="bg-black text-white p-4 rounded-none mb-3 border-2 border-black">
+            <span class="text-[10px] bg-yellow-400 text-black font-black uppercase px-1.5 py-0.5 inline-block mb-1">NO GREY AREAS</span>
+            <h3 class="text-base font-black leading-none text-white mb-2 uppercase">
+              ELECTRICAL WORK IN BLACK & WHITE
+            </h3>
+            <p class="text-[11px] text-slate-300 mb-3 font-medium">Direct talk. Exact quotes. No manufactured defects.</p>
+            <div class="flex gap-2">
+              <button class="flex-1 bg-yellow-400 text-black font-black text-xs py-2 rounded-none border border-black uppercase tracking-wider">CALL PAUL</button>
+              <button class="flex-1 bg-white text-black font-black text-xs py-2 rounded-none border border-black uppercase tracking-wider">WHATSAPP</button>
+            </div>
+          </div>
+
+          <!-- Component Mock -->
+          <div class="bg-white p-3 rounded-none border-2 border-black shadow-[3px_3px_0px_#000] mb-3">
+            <span class="text-[10px] font-black uppercase text-black bg-yellow-300 px-1 py-0.5">DIRECT REPAIR</span>
+            <h4 class="text-xs font-black uppercase text-black mt-1">TRIPPING BREAKER TRIAGE</h4>
+            <p class="text-[11px] text-slate-700 mt-0.5 font-medium">Direct phone dispatch to Paul Badenhorst.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-slate-900 border-t border-slate-800 text-center">
+        <span class="text-xs text-yellow-400 font-semibold">Swiss Mono Direction</span>
+      </div>
+    </div>
+
+    <!-- THEME 4: PRETORIA STALWART -->
+    <div class="theme-card bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between">
+      <div>
+        <div class="p-4 bg-slate-900 border-b border-slate-800">
+          <div class="flex items-center justify-between mb-1">
+            <span class="text-xs font-bold text-lime-400 uppercase tracking-wider">Theme 4</span>
+            <span class="text-[10px] bg-stone-800 text-stone-300 px-2 py-0.5 rounded font-mono">Warm Local</span>
+          </div>
+          <h2 class="text-lg font-bold text-white">Pretoria Stalwart</h2>
+          <p class="text-xs text-slate-400 mt-1">Warm sandstone, deep charcoal stone, bushveld olive, and authentic bakkie craftsman feel.</p>
+          
+          <!-- Swatches -->
+          <div class="flex items-center gap-1.5 mt-3">
+            <div class="w-6 h-6 rounded bg-[#1c1917] border border-white/20" title="Stone Charcoal (#1c1917)"></div>
+            <div class="w-6 h-6 rounded bg-[#f5f5f4] border border-white/20" title="Sandstone Surface (#f5f5f4)"></div>
+            <div class="w-6 h-6 rounded bg-[#f59e0b] border border-white/20" title="Amber Accent (#f59e0b)"></div>
+            <div class="w-6 h-6 rounded bg-[#3f6212] border border-white/20" title="Bushveld Olive (#3f6212)"></div>
+          </div>
+        </div>
+
+        <!-- MOCK PREVIEW -->
+        <div class="p-4 bg-[#f5f5f4] text-stone-900 text-left">
+          <!-- Top Bar -->
+          <div class="bg-[#1c1917] text-stone-200 text-[11px] p-2 rounded-xl flex items-center justify-between mb-3 font-semibold">
+            <span>📍 15 President Steyn St, Pretoria North</span>
+            <span class="text-amber-400">071 213 8108</span>
+          </div>
+
+          <!-- Hero Mock -->
+          <div class="bg-[#292524] text-white p-4 rounded-2xl mb-3 border border-stone-700 shadow-md">
+            <span class="text-[10px] text-amber-300 font-bold uppercase tracking-wider block mb-1">Meet Paul Badenhorst</span>
+            <h3 class="text-base font-extrabold leading-tight text-white mb-2">
+              Your Trusted Local Pretoria Electrician
+            </h3>
+            <p class="text-[11px] text-stone-300 mb-3">Serving Pretoria North, East, Moot & Centurion since decades with a smile and a wave.</p>
+            <div class="flex gap-2">
+              <button class="flex-1 bg-amber-500 hover:bg-amber-400 text-black font-black text-xs py-2 rounded-xl shadow">Call Paul</button>
+              <button class="flex-1 bg-[#3f6212] hover:bg-[#4d7c0f] text-white font-bold text-xs py-2 rounded-xl shadow">WhatsApp</button>
+            </div>
+          </div>
+
+          <!-- Component Mock -->
+          <div class="bg-white p-3 rounded-2xl border border-stone-200 shadow-sm mb-3">
+            <span class="text-[10px] font-bold text-[#3f6212] bg-stone-100 px-2 py-0.5 rounded-full">Friendly Local Service</span>
+            <h4 class="text-xs font-bold text-stone-900 mt-1">Geysers & Tripping Breakers</h4>
+            <p class="text-[11px] text-stone-600 mt-0.5">Praat gerus Afrikaans • Vriendelike diens.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 bg-slate-900 border-t border-slate-800 text-center">
+        <span class="text-xs text-lime-400 font-semibold">Pretoria Stalwart Direction</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchView(mode) {
+      const grid = document.getElementById('container-grid');
+      const cards = grid.children;
+
+      if (mode === 'grid') {
+        grid.className = 'max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6';
+        for (let i = 0; i < cards.length; i++) {
+          cards[i].style.display = 'flex';
+        }
+      } else {
+        const idxMap = { 't1': 0, 't2': 1, 't3': 2, 't4': 3 };
+        const activeIdx = idxMap[mode];
+        grid.className = 'max-w-2xl mx-auto grid grid-cols-1 gap-6';
+        for (let i = 0; i < cards.length; i++) {
+          cards[i].style.display = (i === activeIdx) ? 'flex' : 'none';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
