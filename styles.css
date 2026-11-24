@@ -59,6 +59,51 @@
 /* ==========================================================================
    BASE & BROWSER SURFACES
    ========================================================================== */
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-x: none;
+}
+
+input, textarea, select {
+  font-size: 16px;
+}
+
+button,
+a,
+[role="button"],
+.jump-pill,
+.problem-tab,
+.contact-channel-row {
+  touch-action: manipulation;
+}
+
+button,
+[role="button"],
+.btn-primary,
+.btn-whatsapp,
+.problem-tab,
+.jump-pill,
+.contact-channel-row,
+.site-header nav a,
+.mobile-dock a {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+section[id],
+#problem-card {
+  scroll-margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  section[id],
+  #problem-card {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
 ::selection {
   background-color: var(--selection-bg);
   color: var(--selection-fg);
@@ -68,6 +113,10 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
+}
+
+a:not(.btn-primary):not(.btn-whatsapp):not(.jump-pill):not(.contact-channel-row):active {
+  opacity: 0.72;
 }
 
 body {
@@ -91,6 +140,7 @@ h1, h2, h3, .font-display {
   background-color: var(--bg-topbar);
   color: var(--text-topbar);
   border-bottom: 1px solid #292524;
+  padding: max(0.5rem, env(safe-area-inset-top, 0px)) max(1rem, env(safe-area-inset-right, 0px)) 0.5rem max(1rem, env(safe-area-inset-left, 0px));
 }
 
 .site-header {
@@ -100,9 +150,30 @@ h1, h2, h3, .font-display {
   backdrop-filter: blur(10px);
 }
 
+.site-header > div {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
 .site-mobile-jump {
   background-color: var(--bg-surface-alt);
   border-top: 1px solid var(--border-subtle);
+  padding: 0.5rem max(1rem, env(safe-area-inset-right, 0px)) 0.5rem max(1rem, env(safe-area-inset-left, 0px));
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+section.hero-section,
+section.section-surface,
+section.section-page,
+section.section-coc {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
+.site-mobile-jump::-webkit-scrollbar {
+  display: none;
 }
 
 .jump-pill {
@@ -110,6 +181,12 @@ h1, h2, h3, .font-display {
   color: var(--text-page);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-btn);
+  min-height: 40px;
+  transition: background-color 120ms ease-out, border-color 120ms ease-out, transform 120ms ease-out;
+}
+.jump-pill:active {
+  transform: scale(0.97);
+  background-color: var(--border-subtle);
 }
 
 .logo-mark {
@@ -127,13 +204,11 @@ h1, h2, h3, .font-display {
   border-radius: var(--radius-btn);
   box-shadow: var(--shadow-btn);
   font-weight: 800;
-  transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
-}
-.btn-primary:hover {
-  background-color: var(--accent-hover);
+  transition: background-color 120ms ease-out, transform 120ms ease-out, box-shadow 120ms ease-out;
 }
 .btn-primary:active {
   transform: scale(0.97);
+  background-color: var(--accent-hover);
 }
 
 .btn-whatsapp {
@@ -142,13 +217,11 @@ h1, h2, h3, .font-display {
   border-radius: var(--radius-btn);
   box-shadow: var(--shadow-card);
   font-weight: 700;
-  transition: background-color 150ms ease, transform 120ms ease;
-}
-.btn-whatsapp:hover {
-  background-color: var(--wa-hover);
+  transition: background-color 120ms ease-out, transform 120ms ease-out;
 }
 .btn-whatsapp:active {
   transform: scale(0.97);
+  background-color: var(--wa-hover);
 }
 
 /* Badges */
@@ -280,12 +353,11 @@ h1, h2, h3, .font-display {
   background-color: var(--bg-surface-alt);
   color: var(--text-page);
   border: 1px solid var(--border-subtle);
-  transition: all 150ms ease;
+  transition: background-color 120ms ease-out, border-color 120ms ease-out, color 120ms ease-out, transform 120ms ease-out, box-shadow 120ms ease-out;
   cursor: pointer;
 }
-.problem-tab:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-1px);
+.problem-tab:active {
+  transform: scale(0.97);
 }
 .problem-tab.is-active {
   background-color: var(--accent);
@@ -322,9 +394,6 @@ h1, h2, h3, .font-display {
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
   transition: border-color 180ms ease, transform 180ms ease;
-}
-.service-card:hover {
-  border-color: var(--border-strong);
 }
 .service-card--featured {
   border-color: var(--accent);
@@ -364,9 +433,6 @@ h1, h2, h3, .font-display {
   font-weight: 600;
   transition: border-color 150ms ease;
 }
-.suburb-tag:hover {
-  border-color: var(--accent);
-}
 .suburb-tag--base {
   display: inline-flex;
   align-items: center;
@@ -398,20 +464,49 @@ h1, h2, h3, .font-display {
   background-color: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-btn);
-  transition: background-color 150ms ease;
+  transition: background-color 120ms ease-out, transform 120ms ease-out;
 }
-.contact-channel-row:hover {
-  background-color: rgba(255, 255, 255, 0.11);
+.contact-channel-row:active {
+  transform: scale(0.985);
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 .site-footer {
   background-color: var(--bg-footer);
   color: var(--text-footer);
   border-top: 1px solid #292524;
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
 }
 
 .mobile-dock {
   background-color: var(--bg-dock);
   border-top: 1px solid #292524;
   backdrop-filter: blur(12px);
+  padding: 0.625rem calc(0.625rem + env(safe-area-inset-right, 0px)) calc(0.75rem + env(safe-area-inset-bottom, 0px)) calc(0.625rem + env(safe-area-inset-left, 0px));
+}
+
+/* ==========================================================================
+   HOVER CAPABILITY GATING (PREVENT STICKY HOVER ON TOUCH)
+   ========================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background-color: var(--accent-hover);
+  }
+  .btn-whatsapp:hover {
+    background-color: var(--wa-hover);
+  }
+  .problem-tab:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-1px);
+  }
+  .service-card:hover {
+    border-color: var(--border-strong);
+  }
+  .suburb-tag:hover {
+    border-color: var(--accent);
+  }
+  .contact-channel-row:hover {
+    background-color: rgba(255, 255, 255, 0.11);
+  }
 }
