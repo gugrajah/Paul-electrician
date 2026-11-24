@@ -35,8 +35,10 @@ build/
 .tmp/
 tmp/
 
-# Impeccable Local Overrides & Caches
-.impeccable/*.local.json
-.impeccable/mocks/
-.impeccable/critique/
-.impeccable/live/
+# Internal Planning, Tooling & Exploration Files (not for deployment)
+.impeccable/
+docs/
+DESIGN.md
+GLOSSARY.md
+PRODUCT.md
+theme-comparison.html

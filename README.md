@@ -1,58 +1,34 @@
-# Black & White Electrical — Official Website & Brand Showcase
+# Black & White Electrical
 
-A high-performance, mobile-first website created for **Black & White Electrical**, operated by **Paul Badenhorst** (Approved Electrical Contractor & Installation Electrician).
+Static, mobile-first website for **Black & White Electrical**, operated by **Paul Badenhorst** (Approved Electrical Contractor & Installation Electrician), based in Pretoria North and serving Greater Pretoria.
 
-Based in **Pretoria North** (15 President Steyn St) and dispatching across **Greater Pretoria** (Pretoria North, Pretoria East, Pretoria Moot, Centurion, and surrounding areas).
-
----
-
-## 📍 Verified Business Information
+## Business Details
 
 - **Trading Name:** Black & White Electrical
-- **Operator:** Paul Badenhorst (Approved Electrical Contractor)
-- **Cell / WhatsApp:** 071 213 8108 (`+27 71 213 8108`)
+- **Operator:** Paul Badenhorst (Department of Employment & Labour Registered)
+- **Phone / WhatsApp:** `071 213 8108` (`+27 71 213 8108`)
 - **Email:** `phbadenhorst@gmail.com`
-- **Workshop Address:** 15 President Steyn St, Pretoria North
-- **Statutory Authority:** SANS 10142-1 Compliance • Authorized for Official Certificates of Compliance (CoC)
+- **Workshop Base:** 15 President Steyn St, Pretoria North
+- **Compliance:** SANS 10142-1 Wiring Code & Official Certificates of Compliance (CoC)
 
----
+## Project Files
 
-## 🚀 Quick Start (Running Locally)
+- [`index.html`](index.html) — Semantic HTML5 single-page layout (hero dispatch card, interactive fault triage, services, CoC guide, profile, suburb coverage, and mobile call/WhatsApp dock)
+- [`styles.css`](styles.css) — Pretoria Warm Craft theme tokens and component styles
+- [`site-config.js`](site-config.js) — Centralized business details, fault triage options, and Pretoria service areas
+- [`app.js`](app.js) — DOM bindings, accessible fault triage tabs, and suburb tag rendering
 
-Since this website is built with zero-dependency static technology, no server installation, Node modules, or database setup is required.
+## Local Preview
 
-1. Double-click `index.html` to open it directly in any browser.
-2. Or serve it locally with Python:
+No build step or package installation is required:
+
+1. Open [`index.html`](index.html) directly in a browser, or
+2. Serve locally with Python:
    ```bash
    python3 -m http.server 8000
    ```
-   Then navigate to `http://localhost:8000`.
+   Then visit `http://localhost:8000`.
 
----
+## Updating Business Details
 
-## ⚙️ Updating Details
-
-All business details, phone numbers, email, addresses, and service areas are maintained in:
-👉 **[`site-config.js`](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/site-config.js)**
-
-Any edits in `site-config.js` propagate immediately across all call buttons, WhatsApp messages, headings, and footer text without touching `index.html`.
-
----
-
-## 🏛️ Architecture Decision Records (ADRs)
-
-All decisions from the grilling session and subsequent discoveries are documented under `docs/adr/`:
-- [0001: Single-Page Phone-First Architecture](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0001-single-page-phone-first-architecture.md)
-- [0002: Authentic Neighborhood Brand Persona](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0002-authentic-neighborhood-brand-persona.md)
-- [0003: Static Zero-Maintenance Architecture](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0003-static-zero-maintenance-architecture.md)
-- [0004: Dual Call and WhatsApp Conversion Architecture](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0004-dual-call-and-whatsapp-conversion.md)
-- [0005: Grounded Credibility Without Digital Reviews](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0005-grounded-credibility-without-digital-reviews.md)
-- [0006: Seven-Section Information Architecture and Interactive Problem Routing](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0006-seven-section-information-architecture.md)
-- [0007: Trading Name and Greater Pretoria Expansion](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/docs/adr/0007-trading-name-and-greater-pretoria-expansion.md)
-
----
-
-## 📖 Domain Vocabulary
-
-The project's canonical domain language is maintained in:
-- [GLOSSARY.md](file:///Users/laptop/repos/websites/electrician%20-%20paulbadenhorst/GLOSSARY.md)
+Edit [`site-config.js`](site-config.js) to update phone numbers, WhatsApp pre-filled messages, email, hours, problem triage items, or service suburbs. Changes propagate automatically via `data-bind` hooks in [`app.js`](app.js).
