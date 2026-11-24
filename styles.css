@@ -1,0 +1,417 @@
+/* ==========================================================================
+   Black & White Electrical — Pretoria Warm Craft
+   Daylight limestone/sandstone, workshop charcoal, burnished amber & olive
+   ========================================================================== */
+
+:root {
+  --bg-page: #f6f2ea;
+  --bg-surface: #fffdf9;
+  --bg-surface-alt: #ede7dc;
+  --bg-card: #fffdf9;
+  --bg-hero: #f6f2ea;
+  --bg-coc: #1c1917;
+  --bg-coc-card: #292524;
+  --bg-topbar: #1c1917;
+  --bg-header: rgba(255, 253, 249, 0.95);
+  --bg-footer: #1c1917;
+  --bg-dock: rgba(28, 25, 23, 0.96);
+
+  --text-page: #1c1917;
+  --text-muted: #57534e;
+  --text-hero: #1c1917;
+  --text-hero-muted: #44403c;
+  --text-coc: #fafaf9;
+  --text-coc-muted: #d6d3d1;
+  --text-topbar: #f5f5f4;
+  --text-footer: #a8a29e;
+
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-fg: #1c1917;
+  --accent-soft: #fef3c7;
+  --accent-soft-fg: #78350f;
+  --accent-soft-border: #f59e0b;
+
+  --wa-bg: #365314;
+  --wa-hover: #3f6212;
+  --wa-fg: #ffffff;
+
+  --border-subtle: #dfd7ca;
+  --border-strong: #c7bdb0;
+  --border-hero: #dfd7ca;
+  --border-coc: #44403c;
+
+  --radius-card: 22px;
+  --radius-btn: 14px;
+  --radius-pill: 9999px;
+  --shadow-card: 0 8px 24px rgba(28, 25, 23, 0.05);
+  --shadow-btn: 0 4px 12px rgba(217, 119, 6, 0.22);
+
+  --font-display: 'Bitter', Georgia, Cambria, serif;
+  --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --selection-bg: #f59e0b;
+  --selection-fg: #1c1917;
+  --focus-ring: #d97706;
+}
+
+/* ==========================================================================
+   BASE & BROWSER SURFACES
+   ========================================================================== */
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-page);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-tech {
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   SHARED SEMANTIC COMPONENTS
+   ========================================================================== */
+.site-topbar {
+  background-color: var(--bg-topbar);
+  color: var(--text-topbar);
+  border-bottom: 1px solid #292524;
+}
+
+.site-header {
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-page);
+  backdrop-filter: blur(10px);
+}
+
+.site-mobile-jump {
+  background-color: var(--bg-surface-alt);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.jump-pill {
+  background-color: var(--bg-card);
+  color: var(--text-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-btn);
+}
+
+.logo-mark {
+  border-radius: var(--radius-btn);
+  background-color: #1c1917;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #1c1917;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--accent-fg);
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-btn);
+  font-weight: 800;
+  transition: background-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+}
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-whatsapp {
+  background-color: var(--wa-bg);
+  color: var(--wa-fg);
+  border-radius: var(--radius-btn);
+  box-shadow: var(--shadow-card);
+  font-weight: 700;
+  transition: background-color 150ms ease, transform 120ms ease;
+}
+.btn-whatsapp:hover {
+  background-color: var(--wa-hover);
+}
+.btn-whatsapp:active {
+  transform: scale(0.97);
+}
+
+/* Badges */
+.badge-soft {
+  background-color: var(--accent-soft);
+  color: var(--accent-soft-fg);
+  border: 1px solid var(--accent-soft-border);
+  border-radius: var(--radius-pill);
+}
+
+/* Surface Sections */
+.section-surface {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-page {
+  background-color: var(--bg-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.section-coc {
+  background-color: var(--bg-coc);
+  color: var(--text-coc);
+  border-top: 1px solid var(--border-coc);
+  border-bottom: 1px solid var(--border-coc);
+}
+
+.coc-card {
+  background-color: var(--bg-coc-card);
+  border: 1px solid var(--border-coc);
+  border-radius: var(--radius-card);
+}
+
+.surface-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.surface-card-alt {
+  background-color: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+}
+
+.text-muted-themed {
+  color: var(--text-muted);
+}
+
+.divider-subtle {
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================
+   HERO SECTION (DAYLIGHT SANDSTONE & WORKSHOP CHARCOAL)
+   ========================================================================== */
+.hero-section {
+  background-color: var(--bg-hero);
+  color: var(--text-hero);
+  border-bottom: 1px solid var(--border-hero);
+  position: relative;
+}
+
+.hero-muted {
+  color: var(--text-hero-muted);
+}
+
+.hero-headline {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-accent-span {
+  color: #b45309;
+  font-style: italic;
+}
+
+.hero-badge-pill {
+  background-color: #ede7dc;
+  color: #365314;
+  border: 1px solid #d6cdbe;
+}
+
+.hero-dot {
+  background-color: #d97706;
+}
+
+.hero-trust-row {
+  border-top: 1px solid var(--border-hero);
+}
+
+.hero-trust-icon {
+  color: #b45309;
+}
+
+.hero-aside-card {
+  background-color: #1c1917;
+  color: #fafaf9;
+  border: 1px solid #292524;
+  border-radius: var(--radius-card);
+  box-shadow: 0 16px 36px rgba(28, 25, 23, 0.14);
+}
+.hero-aside-card .aside-muted {
+  color: #d6d3d1;
+}
+.hero-aside-card .aside-row {
+  border-color: #292524;
+}
+
+.aside-dol-badge {
+  background-color: rgba(245, 158, 11, 0.16);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-btn);
+}
+
+/* ==========================================================================
+   PROBLEM TRIAGE TABS & PANEL
+   ========================================================================== */
+.problem-tab {
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-height: 44px;
+  background-color: var(--bg-surface-alt);
+  color: var(--text-page);
+  border: 1px solid var(--border-subtle);
+  transition: all 150ms ease;
+  cursor: pointer;
+}
+.problem-tab:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+.problem-tab.is-active {
+  background-color: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+  font-weight: 800;
+  box-shadow: var(--shadow-card);
+}
+
+.advice-callout {
+  background-color: var(--accent-soft);
+  border: 1px solid var(--accent-soft-border);
+  border-radius: var(--radius-btn);
+  color: var(--accent-soft-fg);
+}
+
+/* ==========================================================================
+   SERVICE PILLARS
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.service-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+.service-card:hover {
+  border-color: var(--border-strong);
+}
+.service-card--featured {
+  border-color: var(--accent);
+}
+
+.service-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-soft);
+  color: var(--accent-soft-fg);
+  border: 1px solid var(--accent-soft-border);
+}
+
+.service-check-icon {
+  color: #365314;
+}
+
+.coc-step-num {
+  color: #fbbf24;
+}
+
+/* ==========================================================================
+   SUBURBS CLOUD TAGS
+   ========================================================================== */
+.suburb-tag {
+  display: inline-block;
+  background-color: var(--bg-card);
+  color: var(--text-page);
+  border: 1px solid var(--border-subtle);
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transition: border-color 150ms ease;
+}
+.suburb-tag:hover {
+  border-color: var(--accent);
+}
+.suburb-tag--base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--accent);
+  color: var(--accent-fg);
+  border: 1px solid var(--accent);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.8125rem;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   CONTACT PANELS, FOOTER & MOBILE DOCK
+   ========================================================================== */
+.contact-primary-panel {
+  background-color: #1c1917;
+  color: #fafaf9;
+  border: 1px solid #292524;
+  border-radius: var(--radius-card);
+}
+
+.contact-accent-text {
+  color: #fbbf24;
+}
+
+.contact-channel-row {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-btn);
+  transition: background-color 150ms ease;
+}
+.contact-channel-row:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+}
+
+.site-footer {
+  background-color: var(--bg-footer);
+  color: var(--text-footer);
+  border-top: 1px solid #292524;
+}
+
+.mobile-dock {
+  background-color: var(--bg-dock);
+  border-top: 1px solid #292524;
+  backdrop-filter: blur(12px);
+}
